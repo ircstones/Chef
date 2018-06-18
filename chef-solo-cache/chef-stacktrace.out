@@ -1,0 +1,29 @@
+Generated at 2018-06-18 17:30:01 -0400
+SyntaxError: /root/chef-repo/chef-solo-cache/cookbooks/mongoTom/recipes/mongodb.rb:20: syntax error, unexpected tCHAR, expecting tCONSTANT
+	only_if {::?('semanage port -l |grep -w 27...
+	           ^~
+/root/chef-repo/chef-solo-cache/cookbooks/mongoTom/recipes/mongodb.rb:20: syntax error, unexpected ')', expecting '}'
+...manage port -l |grep -w 27017')}
+...                              ^
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.1.12/lib/chef/mixin/from_file.rb:34:in `instance_eval'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.1.12/lib/chef/mixin/from_file.rb:34:in `from_file'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.1.12/lib/chef/cookbook_version.rb:199:in `load_recipe'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.1.12/lib/chef/run_context.rb:350:in `load_recipe'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.1.12/lib/chef/run_context/cookbook_compiler.rb:166:in `block in compile_recipes'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.1.12/lib/chef/run_context/cookbook_compiler.rb:163:in `each'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.1.12/lib/chef/run_context/cookbook_compiler.rb:163:in `compile_recipes'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.1.12/lib/chef/run_context/cookbook_compiler.rb:79:in `compile'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.1.12/lib/chef/run_context.rb:199:in `load'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.1.12/lib/chef/policy_builder/expand_node_object.rb:97:in `setup_run_context'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.1.12/lib/chef/client.rb:512:in `setup_run_context'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.1.12/lib/chef/client.rb:278:in `run'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.1.12/lib/chef/application.rb:303:in `run_with_graceful_exit_option'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.1.12/lib/chef/application.rb:279:in `block in run_chef_client'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.1.12/lib/chef/local_mode.rb:44:in `with_server_connectivity'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.1.12/lib/chef/application.rb:261:in `run_chef_client'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.1.12/lib/chef/application/client.rb:441:in `run_application'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.1.12/lib/chef/application.rb:66:in `run'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.1.12/lib/chef/application/solo.rb:224:in `run'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.1.12/bin/chef-solo:25:in `<top (required)>'
+/bin/chef-solo:270:in `load'
+/bin/chef-solo:270:in `<main>'
