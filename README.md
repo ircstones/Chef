@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Deprecated
 ==========
 
@@ -35,3 +36,6 @@ Next Steps
 ==========
 
 Read the README file in each of the subdirectories for more information about what goes in those directories.
+=======
+Two single recipes installing both Tomcat and MongoDB. They are not yet in a cookbook, but wil be refactored in that format
+>>>>>>> 64ca8c1911d3727eb56e5b6534f6b4e675378f5c
