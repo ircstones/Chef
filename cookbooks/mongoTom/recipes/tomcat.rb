@@ -67,5 +67,5 @@ service 'systemd' do
 end
 
 service 'tomcat' do
-	action [:enable, :start]
+	action :start
 end
