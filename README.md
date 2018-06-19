@@ -4,7 +4,7 @@ Installing both MongoDB and Tomcat on a RHEL 7 system
 
 ## Getting Started
 
-This assumes it's being pulled into /root and run from tht eact location
+This assumes it's being pulled into /root and run from that exact location
 
 ### Prerequisites
 
@@ -30,10 +30,12 @@ Install Git
 ```
 #yum install -y git
 ```
+
 Initialize an empty repo in /root
 
 ```
 #git init
+```
 
 Pull the repo
 
