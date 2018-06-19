@@ -4,7 +4,7 @@ Installing both MongoDB and Tomcat on a RHEL 7 system
 
 ## Getting Started
 
-This assumes it's being pulled into /root and run from that exact location
+Pull the repo into /root and run from that exact location
 
 ### Prerequisites
 
@@ -15,8 +15,6 @@ chef-solo
 ```
 
 ### Installing
-
-A step by step series of examples that tell you how to get a development env running
 
 To get the system ready for install grab the Chef rpm and install
 
@@ -46,7 +44,7 @@ Pull the repo
 ## Run the Chef install
 
 ```
-chef-solo -c /root/solo.rb -j /root/startup.json
+#chef-solo -c /root/solo.rb -j /root/startup.json
 ```
 It should take about 1-1.5 minutes to run
 
