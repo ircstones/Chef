@@ -41,7 +41,11 @@ Pull the repo
 #git pull https://github.com/ircstones/Chef
 ```
 
-## Run the Chef install
+## Install the cookbook
+
+* The first recipe updates RHEL
+* The second recipe install mongoDB
+* The third recipe installs and configures Tomcat
 
 ```
 #chef-solo -c /root/solo.rb -j /root/startup.json
