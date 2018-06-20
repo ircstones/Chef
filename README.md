@@ -20,7 +20,7 @@ To get the system ready for install grab the Chef rpm and install
 
 ```
 #wget https://packages.chef.io/files/stable/chefdk/3.0.36/el/7/chefdk-3.0.36-1.el7.x86_64.rpm
-#rpm -ivh chefdk-3.0.36-1.el7.x86_64.rp
+#rpm -ivh chefdk-3.0.36-1.el7.x86_64.rpm
 ```
 
 Install Git
