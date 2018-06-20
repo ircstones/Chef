@@ -29,11 +29,6 @@ execute 'untar_tomcat' do
 	not_if { File.exists?("/opt/tomcat/lib/catalina.jar") }
 end
 
-execute 'rm_tomcat_tar' do
-  	command 'rm /tmp/apache-tomcat-8.5.29.tar.gz'
-	only_if { File.exists?("/tmp/apache-tomcat-8.5.29.tar.gz") }
-end
-
 execute 'recursive-chgrp-to-tomcat' do
   	command 'chgrp -R tomcat /opt/tomcat'
   	action :run
