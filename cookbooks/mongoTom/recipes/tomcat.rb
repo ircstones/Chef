@@ -19,12 +19,20 @@ end
 remote_file '/tmp/apache-tomcat-8.5.29.tar.gz' do
   	source 'https://archive.apache.org/dist/tomcat/tomcat-8/v8.5.29/bin/apache-tomcat-8.5.29.tar.gz'
   	mode '0755'
-  	action :create
+	not_if { File.exists?("/tmp/apache-tomcat-8.5.29.tar.gz") }
+end
+
 end
 
 execute 'untar_tomcat' do
   	command 'tar xzvf /tmp/apache-tomcat-8.5.29.tar.gz --strip-components=1'
   	cwd '/opt/tomcat'
+	not_if { File.exists?("/opt/tomcat/lib/catalina.jar") }
+end
+
+execute 'rm_tomcat_tar' do
+  	command 'rm /tmp/apache-tomcat-8.5.29.tar.gz'
+	only_if { File.exists?("/tmp/apache-tomcat-8.5.29.tar.gz") }
 end
 
 execute 'recursive-chgrp-to-tomcat' do
@@ -43,8 +51,15 @@ execute 'chmod-conf-grp-withx' do
   	action :run
 end
 
-execute 'recursive-chowns-of-dirs' do
-        command 'chown -R tomcat /opt/tomcat/webapps && chown -R tomcat /opt/tomcat/work && chown -R tomcat /opt/tomcat/temp && chown -R tomcat /opt/tomcat/logs'
+#execute 'recursive-chown-of-dirs' do
+ #       command 'chown -R tomcat /opt/tomcat/webapps && chown -R tomcat /opt/tomcat/work && chown -R tomcat /opt/tomcat/temp && chown -R tomcat /opt/tomcat/logs'
+#end
+
+%w{webapps work temp logs}.each do |chdirs|
+  dirn = "/opt/tomcat/#{chdirs}"
+  execute chdirs do
+    command "/bin/chown -R tomcat #{dirn}"
+  end
 end
 
 cookbook_file "/etc/systemd/system/tomcat.service" do
