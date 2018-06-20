@@ -56,6 +56,12 @@ end
   end
 end
 
+%w{webapps work temp logs}.each do |chdirs|
+  execute chdirs do
+    command "/bin/chown -R tomcat /root/#{chdirs}"
+  end
+end
+
 cookbook_file "/etc/systemd/system/tomcat.service" do
 	source "tomcat.service"
   	mode "0644"
