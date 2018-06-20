@@ -1,5 +1,6 @@
 package 'JDK1.7' do
 	package_name 'java-1.7.0-openjdk-devel'
+	not_if { node['packages'].keys.include? "java-1.7.0-openjdk-devel" }
 end
 
 group 'tomcat' do
@@ -20,8 +21,6 @@ remote_file '/tmp/apache-tomcat-8.5.29.tar.gz' do
   	source 'https://archive.apache.org/dist/tomcat/tomcat-8/v8.5.29/bin/apache-tomcat-8.5.29.tar.gz'
   	mode '0755'
 	not_if { File.exists?("/tmp/apache-tomcat-8.5.29.tar.gz") }
-end
-
 end
 
 execute 'untar_tomcat' do
