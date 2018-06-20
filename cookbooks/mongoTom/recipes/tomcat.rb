@@ -45,21 +45,10 @@ execute 'chmod-conf-grp-withx' do
   	action :run
 end
 
-#execute 'recursive-chown-of-dirs' do
- #       command 'chown -R tomcat /opt/tomcat/webapps && chown -R tomcat /opt/tomcat/work && chown -R tomcat /opt/tomcat/temp && chown -R tomcat /opt/tomcat/logs'
-#end
-
 %w{webapps work temp logs}.each do |chdirs|
-  dirn = "/opt/tomcat/#{chdirs}"
-  execute chdirs do
-    command "/bin/chown -R tomcat #{dirn}"
-  end
-end
-
-%w{webapps work temp logs}.each do |chdirs|
-  execute chdirs do
-    command "/bin/chown -R tomcat /root/#{chdirs}"
-  end
+ execute chdirs do
+    	command '/bin/chown -R tomcat /opt/tomcat/#{chdirs}'
+ end
 end
 
 cookbook_file "/etc/systemd/system/tomcat.service" do
