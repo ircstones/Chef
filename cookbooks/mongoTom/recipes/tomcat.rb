@@ -48,9 +48,10 @@ end
 %w{webapps work temp logs}.each do |chdirs|
  sdname = "/opt/tomcat/#{chdirs}"
  execute chdirs do
-    	command '/bin/chown -R tomcat /opt/tomcat/#{sdname}'
+    	command '/bin/chown -R tomcat #{sdname}'
  end
 end
+
 
 cookbook_file "/etc/systemd/system/tomcat.service" do
 	source "tomcat.service"
