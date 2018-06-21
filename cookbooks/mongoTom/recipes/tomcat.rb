@@ -45,11 +45,19 @@ execute 'chmod-conf-grp-withx' do
   	action :run
 end
 
-%w{webapps work temp logs}.each do |chdirs|
- sdname = "/opt/tomcat/#{chdirs}"
- execute chdirs do
-    	command '/bin/chown -R tomcat #{sdname}'
- end
+#%w{webapps work temp logs}.each do |chdirs|
+ #sdname = "/opt/tomcat/#{chdirs}"
+ #execute chdirs do
+  #  	command '/bin/chown -R tomcat #{sdname}'
+ #end
+#end
+
+%w{webapps work temp logs}.each do |subdir|
+  sdname = "/opt/tomcat/#{subdir}"
+  execute subdir do
+    command "/bin/chown -R tomcat #{sdname}"
+    only_if { Dir.exists?("#{sdname}") }
+  end
 end
 
 
