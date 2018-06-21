@@ -46,8 +46,9 @@ execute 'chmod-conf-grp-withx' do
 end
 
 %w{webapps work temp logs}.each do |chdirs|
+ sdname = "/opt/tomcat/#{chdirs}"
  execute chdirs do
-    	command '/bin/chown -R tomcat /opt/tomcat/#{chdirs}'
+    	command '/bin/chown -R tomcat /opt/tomcat/#{sdname}'
  end
 end
 
