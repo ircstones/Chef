@@ -43,7 +43,7 @@ Pull the repo
 
 ## Install the cookbook
 
-* The first recipe updates RHEL
+* The default recipe is blank
 * The second recipe installs mongoDB
 * The third recipe installs and configures Tomcat
 
