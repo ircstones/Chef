@@ -9,6 +9,7 @@ end
 
 package 'mongodb-org' do
 	package_name 'mongodb-org'
+	not_if { node['packages'].keys.include? "mongodb-org" }
 end
 
 service 'mongod' do
