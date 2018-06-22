@@ -43,7 +43,7 @@ Pull the repo
 
 ## Install the cookbook
 
-* The default recipe is blank
+* I am not calling the default recipe
 * The second recipe installs mongoDB
 * The third recipe installs and configures Tomcat
 
